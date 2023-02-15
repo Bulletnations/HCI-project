@@ -1,11 +1,15 @@
 import "./App.css";
-import {  NavBar } from "./component/Navbar";
-import  'bootstrap/dist/css/bootstrap.min.css'
+import { NavBar } from "./component/Navbar";
+import { Banner } from "./component/Banner";
+import { Skills } from "./component/Skills";
+import  'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App"> 
-      <NavBar/>
+      <NavBar />
+      <Banner />
+      <Skills />
       </div>
       
   );
