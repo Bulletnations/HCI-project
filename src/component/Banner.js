@@ -5,9 +5,8 @@ import { ArrowRightCircle } from "react-bootstrap-icons";
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["Web Designer.", "UI/UX Designer."];
+    const toRotate = ["Web Developer.", "Front-end.","Back-end."];
     const [text, setText] = useState('');
-    const [index, setIndex] = useState(1);
     const [delta, setDelta]= useState(300 - Math.random() * 100);
     const period = 2000;
 
@@ -32,15 +31,13 @@ export const Banner = () => {
     
         if (!isDeleting && updatedText === fullText) {
           setIsDeleting(true);
-          setIndex(prevIndex => prevIndex - 1);
+          
           setDelta(period);
         } else if (isDeleting && updatedText === '') {
           setIsDeleting(false);
           setLoopNum(loopNum + 1);
-          setIndex(1);
-          setDelta(500);
-        } else {
-          setIndex(prevIndex => prevIndex + 1);
+         
+          setDelta(300);
         }
       }
 
