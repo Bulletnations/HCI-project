@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
+import headerImg from "../assets/img/header-img.svg";
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["Web Developer.", "Front-end.","Back-end."];
+    const toRotate = ["Web Application.", "Front-end.","Back-end."];
     const [text, setText] = useState('');
     const [delta, setDelta]= useState(300 - Math.random() * 100);
     const period = 2000;
@@ -16,7 +17,7 @@ export const Banner = () => {
         }, delta);
     
         return () => { clearInterval(ticker) };
-      }, [text])
+      }, [text, delta])
     
       const tick = () => {
         let i = loopNum % toRotate.length;
@@ -46,13 +47,13 @@ export const Banner = () => {
             <Container>
               <Row className="align-items-center">
                 <Col xs={12} md= {6} xl={7}>
-                    <span className="tagline">Welcome to my Portfolio</span>
-                    <h1>{'Hi I am Bullet,'}<span className="wrap">{text}</span></h1>
+                    <span className="tagline">Welcome to Tripvago</span>
+                    <h1>{'We design and build,'}<span className="wrap">{text}</span></h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
                     <button onClick={ () => console.log('connect...')}>Lets connect <ArrowRightCircle size={25}/></button>
                 </Col>
                 <Col xs={12} md= {6} xl={5}>
-                    <img src="" alt="Header img"/>
+                    <img src={headerImg} alt="Header img"/>
 
                 </Col>
               </Row>

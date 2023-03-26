@@ -30,14 +30,15 @@ export const  NavBar = () => {
       <Container>
         <Navbar.Brand href="#home">
             <img src="" alt="logo"/>
+            <h2>Tripvago</h2>
          </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
         <span className="navbar-toggle-icon"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={ () => onUpdateActiveLink('home')}>Home</Nav.Link>
-            <Nav.Link href="#Skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('slills')}>Skills</Nav.Link>
+            <Nav.Link href="#Skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>The Team</Nav.Link>
             <Nav.Link href="#Project" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Project</Nav.Link>
           </Nav>
         </Navbar.Collapse>
