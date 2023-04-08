@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import React, { useState, useEffect, useRef } from "react";
-
+import  manImg from "../assets/img/ie.jpg"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -18,6 +18,7 @@ export const Skills = () => {
     setShowDetails(false);
   };
 
+  
   const handleScroll = () => {
     if (showDetails) {
       const detailsRect = detailsRef.current.getBoundingClientRect();
@@ -35,9 +36,30 @@ export const Skills = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, [showDetails]);
 
-  const items = [    {      title: "Item 1",      image: "",      details: "Details for Item 1",    },    {      title: "Item 2",      image: "",      details: "Details for Item 2",    },    {      title: "Item 3",      image: "",      details: "Details for Item 3",    },  ];
+  const items = [
+    {
+      title: "Brian Osewe",
+      image: manImg,
+      details: "Details for Item 1",
+    },
+    {
+      title: "Mercy Ngendo",
+      image: manImg,
+      details: "Details for Item 2",
+    },
+    {
+      title: "Vivien Sawe",
+      image: manImg,
+      details: "Details for Item 3",
+    },
+    {
+      title: "Michael Ndungu",
+      image: manImg,
+      details: "Details for Item 4",
+    },
+  ];
 
   const currentItem = items[activeIndex];
 
@@ -56,12 +78,17 @@ export const Skills = () => {
     },
   };
 
+  const handleBackgroundClick = () => {
+    setShowDetails(false);
+  };
+
   return (
-    <section className="skill" id="skills">
+    <section className="skill" id="skills" >
       <Container>
         <Row>
           <Col>
-            <div className="skill-bx">
+            <div className="skill-bx"
+            >
               <h2>The Team</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -77,12 +104,12 @@ export const Skills = () => {
                 {items.map((item, index) => (
                   <div key={index} onClick={() => handleCarouselClick(index)}>
                     <img
-                      className="d-block w-100"
+                      className="d-block"
                       src={item.image}
                       alt={item.title}
                       style={{ cursor: "pointer" }}
                     />
-                    <div className="carousel-caption">
+                    <div className="title">
                       <h5>{item.title}</h5>
                     </div>
                   </div>
@@ -90,32 +117,23 @@ export const Skills = () => {
               </Carousel>
               {showDetails && (
                 <div
+                  className="popup-tab"
                   ref={detailsRef}
-                  style={{
-                    position: "fixed",
-                    top: 0,
-                    bottom: 0,
-                    left: "20%",
-                    right: "20%",
-                    backgroundColor: "#fff",
-                    zIndex: 10,
-                    padding: "20px",
-                    overflowY: "scroll",
-                  }}
+                  onClick={handleBackgroundClick}
                 >
+                 <div className="popup" >
+
                   <h2>{currentItem.title}</h2>
                   <p>{currentItem.details}</p>
                   <button onClick={handleDetailsClick}>Close</button>
+                 </div>
                 </div>
               )}
             </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+};
 
-            
-                        
-                    </Col>
-                </Row>
-            </Container>
-        </section>
-      )
-     
-    } 
