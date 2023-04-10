@@ -1,21 +1,27 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCards";
+import web1 from "../assets/img/page 1.jpg"
+import web2 from "../assets/img/web2.jpg"
+import web3 from "../assets/img/web3.webp"
 
 export const Projects = () =>{
 
   const projects = [
 
     {
+        imgUrl:web1,
         title: "Business Startup",
         description: "Design & Development",
 
       },
       {
+        imgUrl:web2,
         title: "Business Startup",
         description: "Design & Development",
         
       },
       {
+        imgUrl:web3,
         title: "Business Startup",
         description: "Design & Development",
        
@@ -23,17 +29,17 @@ export const Projects = () =>{
       {
         title: "Business Startup",
         description: "Design & Development",
-        
+        imgUrl:web1,
       },
       {
         title: "Business Startup",
         description: "Design & Development",
-        
+        imgUrl:web1,
       },
       {
         title: "Business Startup",
         description: "Design & Development",
-        
+        imgUrl:web1,
       },
   ];
   return (

@@ -391,7 +391,7 @@ nav.navbar {
   }
   .proj-imgbx {
     position: relative;
-    border-radius: 30px;
+    border-radius: 10px;
     overflow: hidden;
     margin-bottom: 24px;
   }
