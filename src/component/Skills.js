@@ -60,7 +60,24 @@ export const Skills = () => {
       details: "Details for Item 4",
     },
   ];
-
+  const buttons = document.querySelectorAll('.bttn');
+  buttons ((bttn) => {
+    const bttnFill = bttn.querySelector('.bttn-fill');
+  
+    bttn.addEventListener('mouseover', () => {
+      // Return the fill element back to bottom with 0
+      // duration so it flicks to the bottom
+      animateBtnFill(bttnFill,50, 2)
+  
+      // send the fill element in the buttons center
+      animateBtnFill(bttnFill, -50, 850);
+    });
+  
+    bttn.addEventListener('mouseout', () => {
+      // send the button fill upwards
+      animateBtnFill(bttnFill, -150, 850);
+    });
+  });
 
   function animateBtnFill(btnFill, translateY, duration) {
     requestAnimationFrame(() => {
@@ -74,24 +91,7 @@ export const Skills = () => {
   }
   
   
-  const buttons = document.querySelectorAll('.bttn')
-  buttons.forEach((bttn) => {
-    const bttnFill = bttn.querySelector('.bttn-fill')
   
-    bttn.addEventListener('mouseenter', () => {
-      // Return the fill element back to bottom with 0
-      // duration so it flicks to the bottom
-      animateBtnFill(bttnFill, 50, 0)
-      
-      // send the fill element in the buttons center
-      animateBtnFill(bttnFill, -50, 850)
-    })
-  
-    bttn.addEventListener('mouseleave', () => {
-      // send the button fill upwards
-      animateBtnFill(bttnFill, -150, 850)
-    })
-  })
   
   const currentItem = items[activeIndex];
 
