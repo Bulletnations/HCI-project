@@ -60,39 +60,9 @@ export const Skills = () => {
       details: "Details for Item 4",
     },
   ];
-  const buttons = document.querySelectorAll('.bttn');
-  buttons ((bttn) => {
-    const bttnFill = bttn.querySelector('.bttn-fill');
-  
-    bttn.addEventListener('mouseover', () => {
-      // Return the fill element back to bottom with 0
-      // duration so it flicks to the bottom
-      animateBtnFill(bttnFill,50, 2)
-  
-      // send the fill element in the buttons center
-      animateBtnFill(bttnFill, -50, 850);
-    });
-  
-    bttn.addEventListener('mouseout', () => {
-      // send the button fill upwards
-      animateBtnFill(bttnFill, -150, 850);
-    });
-  });
 
-  function animateBtnFill(btnFill, translateY, duration) {
-    requestAnimationFrame(() => {
-      btnFill.animate(
-        {
-          transform: `translate(-50%, ${translateY}%)`,
-        },
-        { duration, fill: 'forwards', easing: 'ease' }
-      )
-    })
-  }
   
-  
-  
-  
+
   const currentItem = items[activeIndex];
 
   const responsive = {
@@ -157,11 +127,10 @@ export const Skills = () => {
 
                   <h2>{currentItem.title}</h2>
                   <p>{currentItem.details}</p>
-                  <div>
+                  
                   <button className="bttn"   onClick={handleDetailsClick}>
-                  <div className="bttn-fill"></div>
                     <div className="bttn-content" >Close</div> </button>
-                 </div>
+                 
                  </div>
                 </div>
               )}
